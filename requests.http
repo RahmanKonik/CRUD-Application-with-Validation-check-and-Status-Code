@@ -1,0 +1,50 @@
+
+### get request for movies all data
+GET http://localhost:3000/movies
+Content-Type: application/json
+
+### get request for a specific movie by its id.
+GET http://localhost:3000/movies/4
+Content-Type: application/json
+
+### filtering by title.
+GET http://localhost:3000/movies?title=inception
+Content-Type: application/javascript
+
+### filtering by year.
+GET http://localhost:3000/movies?year=2000
+Content-Type: application/json
+
+### filtering by director.
+GET http://localhost:3000/movies?director=Christopher%20Nolan
+
+### filtering by year and director together.
+GET http://localhost:3000/movies?year=2019&director=Bong%20Joon&%2Dho
+
+### add some special character in movies data. space(%20), -(%2D), :(%3A), &(%26)
+GET http://localhost:3000/movies?title=%20Avater%2D2%3A%20The%20way%20of%20the%20water%20
+
+###  Post request to Create a new movie. Ensure all required fields (title, director, year) are provided.
+### Use 201 Created for a successful response.
+POST http://localhost:3000/movies
+Content-Type: application/json
+
+{
+    "title": "Square Game",
+    "director": "Hwang Dong-hyuk",
+    "year": 2012
+}
+
+### Put request for update a movie by it's id.
+PUT http://localhost:3000/movies/4
+Content-Type: application/json
+
+{
+    "title": "Square Game(update version)",
+    "director": "Hwang Dong-hyuk",
+    "year": 2022
+}
+
+### Delete request for delete a movie by it's id.
+DELETE http://localhost:3000/movies/6
+Content-Type: application/json
